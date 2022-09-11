@@ -1,0 +1,70 @@
+nav {
+    background-color: #EE1515;
+    color: #F0F0F0;
+}
+
+.nav-link {
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-brand,
+.nav-link {
+    color: #F0F0F0;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.navbar-brand:hover {
+    color: #F0F0F0;
+}
+
+.nav-link:hover {
+    background-color: #F0F0F0;
+    color: #EE1515;
+}
+
+.navbar-toggler {
+    border: none;
+    color: #EE1515;
+    background-color: #F0F0F0;
+}
+
+.navbar-nav-scroll > * {
+    display: flex;
+}
+
+.form-control {
+    background-color: #F0F0F0;
+    outline: none;
+    border: none;
+}
+
+.form-control:focus {
+    background-color: #F0F0F0;
+    border-color: none;
+}
+
+.btn-primary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #EE1515;
+    --bs-btn-bg: #F0F0F0;
+    --bs-btn-border-color: #EE1515;
+    --bs-btn-hover-bg: #FFFFFF;
+    --bs-btn-hover-border-color: #EE1515;
+    --bs-btn-active-bg: #FFFFFF;
+    --bs-btn-active-border-color: #EE1515;
+    padding: 0;
+    transition: 0.3s ease;
+}
+
+.btn-primary:active {
+    transform: scale(90%);
+}
+
+.navbar-toggler-icon {
+    background-image: var(--bs-navbar-toggler-icon-bg);
+    background-color: #EE1515;
+}

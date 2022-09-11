@@ -1,0 +1,36 @@
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .carousel-caption h3 {
+    background-color: rgba(218, 31, 31, 0.7);
+    padding: 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .carousel-caption h3:hover {
+    background-color: rgba(218, 31, 31, 1);
+    padding: 20px;
+    border-radius: 12px;
+  }
+  
+  .carousel-control-next-icon,
+  .carousel-control-prev-icon {
+    background-color: rgba(218, 31, 31, 0.7);
+    padding: 10px;
+    border: 16px solid rgba(218, 31, 31, 0.7);
+    border-radius: 100%;
+    transition: 0.3s ease;
+  }
+  
+  .carousel-control-next-icon,
+  .carousel-control-prev-icon {
+    background-color: rgba(218, 31, 31, 1);
+    padding: 10px;
+    border: 8px solid rgba(218, 31, 31, 1);
+  }
+  

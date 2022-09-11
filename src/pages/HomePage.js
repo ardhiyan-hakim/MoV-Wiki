@@ -1,7 +1,9 @@
+import CarouselComponent from "../components/CarouselComponent";
+
 function HomePage() {
   return (
     <>
-      <h1>HomePage</h1>
+      <CarouselComponent />
     </>
   );
 }
