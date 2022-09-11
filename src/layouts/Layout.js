@@ -1,4 +1,4 @@
-import Container from "react-bootstrap/Container";
+// import Container from "react-bootstrap/Container";
 import FooterComponent from "./FooterComponent";
 import NavMov from "./NavbarComponent";
 
@@ -7,7 +7,7 @@ function Layout(props) {
     <>
       <NavMov />
       <main>
-        <Container>{props.children}</Container>
+        {props.children}
       </main>
       <FooterComponent />
     </>

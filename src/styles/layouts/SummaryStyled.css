@@ -1,0 +1,52 @@
+.wrapper {
+    width: 100%;
+    min-height: 100vh;
+    padding: 5%;
+    background-color: #f0f0f0;
+    flex-direction: column;
+  }
+  
+  .wrapper h1 {
+    text-align: center;
+    padding: 30px 0;
+  }
+  
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+  }
+  
+  .content-item {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+  }
+  
+  .content-item .content-desc {
+    width: 40%;
+    text-align: justify;
+  }
+  
+  .content-item .content-image {
+    background: url("https://www.cheatsheet.com/wp-content/uploads/2019/04/avengers-endgame-poster-2.jpg");
+    background-position: left;
+    background-size: cover;
+    width: 40%;
+    height: 360px;
+    border-radius: 12px;
+  }
+  
+  .content-item:nth-child(2) .content-image {
+    background: url("https://m.media-amazon.com/images/M/MV5BNzAwNzUzNjY4MV5BMl5BanBnXkFtZTgwMTQ5MzM0NjM@._V1_.jpg");
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .content-item .vertical {
+    width: 5px;
+    height: inherit;
+    background-color: #ee1515;
+  }
+  
