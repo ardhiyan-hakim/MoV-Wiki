@@ -1,8 +1,11 @@
+import CardMovie from  '../components/CardMovie'
+import '../styles/Movie.css'
 function Movie() {
   return (
-    <>
-      <h1>Movie</h1>
-    </>
+  <div className='cardMovie'>
+  <CardMovie/>
+  </div>
+  
   );
 }
 
