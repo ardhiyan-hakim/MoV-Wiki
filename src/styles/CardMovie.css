@@ -1,0 +1,36 @@
+.cardMovie{
+  height : auto;
+  width: 100%;
+}
+.movieImage{
+ height: auto;
+ margin: 5px;
+ padding: 1px;
+ border: none;
+ background: none;
+}
+.images{
+  height: 350px;
+  border-radius: 12px 12px 0 0 ;
+  cursor: pointer;
+}
+.movieWrapper{
+  padding: 0;
+}
+.icon{
+  margin-bottom: 3px;
+}
+
+.card .card-content{
+  border-radius: 0 0 12px 12px;
+  background-color: #fff;
+  color: #ee1515;
+}
+.btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 50%;
+  border-radius: 7px;
+}

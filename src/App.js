@@ -9,6 +9,7 @@ import Movie_2 from "./pages/Movie_2";
 import Movie_3 from "./pages/Movie_3";
 import Movie_4 from "./pages/Movie_4";
 import Movie_5 from "./pages/Movie_5";
+import Movie_6 from "./pages/Movie_6";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route path="/movie/3" element={<Movie_3 />} />
           <Route path="/movie/4" element={<Movie_4 />} />
           <Route path="/movie/5" element={<Movie_5 />} />
+          <Route path="/movie/6" element={<Movie_6 />} />
         </Routes>
       </Layout>
     </BrowserRouter>
