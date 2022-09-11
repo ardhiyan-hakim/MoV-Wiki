@@ -1,5 +1,11 @@
+import Cardbio from "../components/CardBio";
+
 function About() {
-  return <h1>About</h1>;
+  return (
+    <>
+      <Cardbio />
+    </>
+  );
 }
 
 export default About;
