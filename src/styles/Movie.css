@@ -1,20 +1,20 @@
-.cardMovie{
-  height : auto;
+.cardMovie {
+  height: auto;
   background-color: #f0f0f0;
   padding: 5%;
 }
-h1{
+h1 {
   color: #ee1515;
 }
-.wrapper{
+.wrapper {
   display: flex;
   width: 100%;
-  height: 100vh;
+  height: auto;
   background-color: #f0f0f0;
   padding: 5%;
   color: #ee1515;
 }
-.content-header{
+.content-header {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,34 +22,52 @@ h1{
   background-color: #f0f0f0;
   height: 480px;
 }
-.content-header-image{
+.content-header-image {
   width: 70%;
   height: 80%;
   aspect-ratio: 9/16;
 }
-.content-header-title{
+.content-header-title {
   height: 100px;
   max-height: 150px;
 }
-.card-title{
-  font-weight:900;
+.card-title {
+  font-weight: 900;
 }
-.content-body{
+.content-body {
   width: 70%;
   padding: 0 5%;
 }
-.images{
+.images {
   width: 100%;
   border-radius: 5px;
 }
-.content-body>*{
+.content-body > * {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-.card-text{
+.card-text {
   font-weight: 700;
 }
-p{
+p {
   text-align: justify;
+}
+img {
+  border: none;
+}
+.row.card-movie {
+  --bs-gutter-x: 0rem;
+  margin: 0;
+}
+.movieImage.card {
+  height: 100%;
+}
+.card-content {
+  width: 100%;
+}
+.p-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

@@ -34,3 +34,11 @@
   width: 50%;
   border-radius: 7px;
 }
+.movieImage .card {
+  border-radius: 12px;
+}
+.movieImage img {
+  border: none;
+  border-radius: 6px 6px 0 0;
+  width: 100%
+}

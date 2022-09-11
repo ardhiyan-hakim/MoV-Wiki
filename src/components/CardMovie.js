@@ -8,12 +8,16 @@ import Onepiece from "../assets/Onepiece.jpg";
 import Pinocchio from "../assets/Pinocchio.jpg";
 import Topgun from "../assets/Topgun.jpg";
 import "../styles/CardMovie.css";
+
+import { useNavigate } from "react-router-dom";
+
 function CardMovie() {
+  const navigate = useNavigate();
   return (
     <div>
       <h1>Trending Movies</h1>
       <br />
-      <Row>
+      <Row className="card-movie">
         <Col md={3} className="movieWrapper">
           <Card className="movieImage">
             <Image src={Miracle} alt="Miracle in Cell 07" className="images" />
@@ -25,7 +29,14 @@ function CardMovie() {
                 <Card.Text className="text-center">
                   Rating : 4.9 <AiFillStar color="yellow" className="icon" />
                 </Card.Text>
-                <Button variant="primary">Detail</Button>
+                <Button
+                  variant="primary"
+                  onClick={() => {
+                    navigate("./1");
+                  }}
+                >
+                  Detail
+                </Button>
               </div>
             </div>
           </Card>
@@ -39,7 +50,14 @@ function CardMovie() {
                 <Card.Text className="text-center">
                   Rating : 4.8 <AiFillStar color="yellow" className="icon" />
                 </Card.Text>
-                <Button variant="primary">Detail</Button>
+                <Button
+                  variant="primary"
+                  onClick={() => {
+                    navigate("./2");
+                  }}
+                >
+                  Detail
+                </Button>
               </div>
             </div>
           </Card>
@@ -53,7 +71,14 @@ function CardMovie() {
                 <Card.Text className="text-center">
                   Rating : 4.7 <AiFillStar color="yellow" className="icon" />
                 </Card.Text>
-                <Button variant="primary">Detail</Button>
+                <Button
+                  variant="primary"
+                  onClick={() => {
+                    navigate("./3");
+                  }}
+                >
+                  Detail
+                </Button>
               </div>
             </div>
           </Card>
@@ -69,7 +94,14 @@ function CardMovie() {
                 <Card.Text className="text-center">
                   Rating : 4.6 <AiFillStar color="yellow" className="icon" />
                 </Card.Text>
-                <Button variant="primary">Detail</Button>
+                <Button
+                  variant="primary"
+                  onClick={() => {
+                    navigate("./4");
+                  }}
+                >
+                  Detail
+                </Button>
               </div>
             </div>
           </Card>
@@ -83,7 +115,14 @@ function CardMovie() {
                 <Card.Text className="text-center">
                   Rating : 4.5 <AiFillStar color="yellow" className="icon" />
                 </Card.Text>
-                <Button variant="primary">Detail</Button>
+                <Button
+                  variant="primary"
+                  onClick={() => {
+                    navigate("./5");
+                  }}
+                >
+                  Detail
+                </Button>
               </div>
             </div>
           </Card>
@@ -97,7 +136,14 @@ function CardMovie() {
                 <Card.Text className="text-center">
                   Rating : 4.4 <AiFillStar color="yellow" className="icon" />
                 </Card.Text>
-                <Button variant="primary">Detail</Button>
+                <Button
+                  variant="primary"
+                  onClick={() => {
+                    navigate("./6");
+                  }}
+                >
+                  Detail
+                </Button>
               </div>
             </div>
           </Card>
