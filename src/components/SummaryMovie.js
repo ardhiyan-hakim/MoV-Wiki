@@ -2,7 +2,7 @@ import "../styles/layouts/SummaryStyled.css";
 
 function SummaryMovie() {
   return (
-    <div className="wrapper">
+    <div className="wrapper summary">
       <h1>MoV</h1>
 
       <div className="content-container">

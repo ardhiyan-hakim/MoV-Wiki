@@ -24,7 +24,7 @@ function NavMov() {
             <Nav.Link onClick={() => navigate("/movie")}>Movie</Nav.Link>
           </Nav>
           <Form className="d-flex">
-            <Form.Control className="me-2" aria-label="Search" />
+            <Form.Control className="me-2" aria-label="Search" placeholder="Search"/>
             <Button>
               <BsSearch />
             </Button>

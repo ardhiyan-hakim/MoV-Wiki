@@ -3,6 +3,7 @@ import Miracle from "../assets/Miracle.jpg";
 import { Card, Image } from "react-bootstrap";
 import { AiFillStar } from "react-icons/ai";
 import "../styles/Movie.css";
+
 function Movie_1() {
   return (
     <div className="wrapper">

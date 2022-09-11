@@ -94,7 +94,7 @@ function FooterComponent() {
                 aria-label="With textarea"
               />
             </InputGroup>
-            <Button className="mt-4" variant="secondary">
+            <Button className="mt-4 feedback" variant="secondary">
               Submit Feedback
             </Button>
           </Col>
