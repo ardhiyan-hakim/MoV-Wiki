@@ -14,12 +14,12 @@ import { useNavigate } from "react-router-dom";
 function CardMovie() {
   const navigate = useNavigate();
   const data = [
-    {title: 'Miracle in Cell 07', Rating: 4.9, image:Miracle },
-    {title: 'Mumun', Rating: 4.8, image:Mumun },
-    {title: 'Uncharted', Rating: 4.7, image:Uncharted },
-    {title: 'Onepiece', Rating: 4.6, image:Onepiece},
-    {title: 'Pinocchio', Rating: 4.5, image:Pinocchio},
-    {title: 'Topgun', Rating: 4.4 ,image:Topgun},
+    {title: 'Miracle in Cell 07', Rating: 4.9, image:Miracle, path:1 },
+    {title: 'Mumun', Rating: 4.8, image:Mumun, path:2 },
+    {title: 'Uncharted', Rating: 4.7, image:Uncharted, path:3 },
+    {title: 'Onepiece', Rating: 4.6, image:Onepiece, path:4},
+    {title: 'Pinocchio', Rating: 4.5, image:Pinocchio, path:5},
+    {title: 'Topgun', Rating: 4.4 ,image:Topgun, path:6},
   ]
   return (
     <div>
@@ -29,7 +29,7 @@ function CardMovie() {
       {data.map((item, index)=>{
         return(
           <Col md={3} className="movieWrapper"
-          key={index} >
+          key={index}>
           <Card className="movieImage">
             <Image src={item.image} alt="Miracle in Cell 07" className="images" />
             <div className="card-content">
@@ -43,7 +43,7 @@ function CardMovie() {
                 <Button
                   variant="primary"
                   onClick={() => {
-                    navigate("./1");
+                    navigate(`./${item.path}`);
                   }}
                 >
                   Detail
