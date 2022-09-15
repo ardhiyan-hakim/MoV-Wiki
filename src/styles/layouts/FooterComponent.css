@@ -1,3 +1,12 @@
-.bg-cpy{
-    background-color: rgba(0, 0, 0, 0.2);
+.bg-cpy {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+button.feedback {
+  width: 100%;
+}
+
+p svg {
+    width: 20px;
+    height: 20px;
 }

@@ -1,36 +1,44 @@
 .carousel {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .carousel-caption h3 {
-    background-color: rgba(218, 31, 31, 0.7);
-    padding: 20px;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: 0.3s ease;
-  }
-  
-  .carousel-caption h3:hover {
-    background-color: rgba(218, 31, 31, 1);
-    padding: 20px;
-    border-radius: 12px;
-  }
-  
-  .carousel-control-next-icon,
-  .carousel-control-prev-icon {
-    background-color: rgba(218, 31, 31, 0.7);
-    padding: 10px;
-    border: 16px solid rgba(218, 31, 31, 0.7);
-    border-radius: 100%;
-    transition: 0.3s ease;
-  }
-  
-  .carousel-control-next-icon,
-  .carousel-control-prev-icon {
-    background-color: rgba(218, 31, 31, 1);
-    padding: 10px;
-    border: 8px solid rgba(218, 31, 31, 1);
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5% 15% 0;
+  background-color: #f0f0f0;
+}
+
+.carousel-caption h3 {
+  background-color: rgba(218, 31, 31, 0.7);
+  padding: 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.carousel-caption h3:hover {
+  background-color: rgba(218, 31, 31, 1);
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  padding: 5% 0 0;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  background-color: rgba(218, 31, 31, 0.7);
+  padding: 10px;
+  border: 16px solid rgba(218, 31, 31, 0.7);
+  border-radius: 100%;
+  transition: 0.3s ease;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  background-color: rgba(218, 31, 31, 1);
+  padding: 10px;
+  border: 8px solid rgba(218, 31, 31, 1);
+}
+
+.carousel-item img {
+  border: 50px solid rgba(0, 0, 0, 0.95);
+}

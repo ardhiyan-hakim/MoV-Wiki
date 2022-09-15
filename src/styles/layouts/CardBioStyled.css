@@ -30,8 +30,10 @@
     padding-bottom: 20px;
   }
   
-  img {
+  .card img {
     border: 4px solid #EE1515;
+    border-radius: 100%;
+    width: 70%;
   }
   
   .btn {
@@ -41,7 +43,7 @@
     justify-content: center;
   }
   
-  .btn-primary {
+  .link-button.btn-primary {
     --bs-btn-bg: #EE1515;
     --bs-btn-border-color: #EE1515;
     --bs-btn-hover-bg: #FFFFFF;
@@ -56,7 +58,7 @@
     transform: scale(90%);
   }
   
-  a {
+  .link-button a {
     display: block;
     width: 100%;
     height: 100%;
@@ -68,4 +70,6 @@
   .btn-primary:hover a {
     color: #EE1515;
   }
-  
+  .bg-cpy {
+    width: 100%;
+  }

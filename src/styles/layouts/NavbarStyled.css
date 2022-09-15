@@ -4,9 +4,30 @@ nav {
 }
 
 .nav-link {
-    display: flex;
+    display: block;
     justify-content: center;
+    color: #F0F0F0;
+    height: 100%;
 }
+
+.nav-link:focus {
+    color: #F0F0F0;
+}
+
+span.navbar-brand {
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+    border-radius: 8px;
+    padding: 6px 18px;
+    transition: 0.3s ease;
+}
+
+span.navbar-brand:hover {
+    color: #EE1515;
+    background-color: #F0F0F0;
+}
+
 
 .navbar-brand,
 .nav-link {
@@ -45,13 +66,16 @@ nav {
     border-color: none;
 }
 
-.btn-primary {
+form .btn-primary {
     display: flex;
     justify-content: center;
     align-items: center;
     color: #EE1515;
+    width: 48px;
+    height: 36px;
     --bs-btn-bg: #F0F0F0;
     --bs-btn-border-color: #EE1515;
+    --bs-btn-hover-color: #EE1515;
     --bs-btn-hover-bg: #FFFFFF;
     --bs-btn-hover-border-color: #EE1515;
     --bs-btn-active-bg: #FFFFFF;
