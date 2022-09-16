@@ -29,6 +29,13 @@ function CardMovie() {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [title, setTitle] = useState("");
+  const [rating, setRating] = useState(0);
+  const [image, setImage] = useState("");
+  const [genre, setGenre] = useState("");
+  const [director, setDirector] = useState("");
+  const [actor, setActor] = useState("");
+  const [description, setDescription] = useState("");
 
   return (
     <>
@@ -51,54 +58,124 @@ function CardMovie() {
                 controlId="exampleForm.ControlInput1"
               >
                 <Form.Label>Title</Form.Label>
-                <Form.Control placeholder="" autoFocus />
+                <Form.Control
+                  placeholder=""
+                  autoFocus
+                  onChange={(event) => {
+                    setTitle((prev) => ({
+                      ...prev,
+                      title: event.target.value,
+                    }));
+                  }}
+                />
               </Form.Group>
               <Form.Group
                 className="mb-3"
                 controlId="exampleForm.ControlInput1"
               >
                 <Form.Label>Rating</Form.Label>
-                <Form.Control placeholder="" autoFocus />
+                <Form.Control
+                  placeholder=""
+                  autoFocus
+                  onChange={(event) => {
+                    setRating((prev) => ({
+                      ...prev,
+                      rating: event.target.value,
+                    }));
+                  }}
+                />
               </Form.Group>
               <Form.Group
                 className="mb-3"
                 controlId="exampleForm.ControlInput1"
               >
                 <Form.Label>Image</Form.Label>
-                <Form.Control placeholder="" autoFocus />
+                <Form.Control
+                  placeholder=""
+                  autoFocus
+                  onChange={(event) => {
+                    setImage((prev) => ({
+                      ...prev,
+                      image: event.target.value,
+                    }));
+                  }}
+                />
               </Form.Group>
               <Form.Group
                 className="mb-3"
                 controlId="exampleForm.ControlInput1"
               >
                 <Form.Label>Genre</Form.Label>
-                <Form.Control placeholder="" autoFocus />
+                <Form.Control
+                  placeholder=""
+                  autoFocus
+                  onChange={(event) => {
+                    setGenre((prev) => ({
+                      ...prev,
+                      genre: event.target.value,
+                    }));
+                  }}
+                />
 
                 <Form.Group
                   className="mb-3"
                   controlId="exampleForm.ControlInput1"
                 ></Form.Group>
                 <Form.Label>Director</Form.Label>
-                <Form.Control placeholder="" autoFocus />
+                <Form.Control
+                  placeholder=""
+                  autoFocus
+                  onChange={(event) => {
+                    setDirector((prev) => ({
+                      ...prev,
+                      director: event.target.value,
+                    }));
+                  }}
+                />
               </Form.Group>
               <Form.Group
                 className="mb-3"
                 controlId="exampleForm.ControlInput1"
               >
                 <Form.Label>Actor</Form.Label>
-                <Form.Control placeholder="" autoFocus />
+                <Form.Control
+                  placeholder=""
+                  autoFocus
+                  onChange={(event) => {
+                    setActor((prev) => ({
+                      ...prev,
+                      actor: event.target.value,
+                    }));
+                  }}
+                />
               </Form.Group>
               <Form.Group
                 className="mb-3"
                 controlId="exampleForm.ControlTextarea1"
               >
                 <Form.Label>Description</Form.Label>
-                <Form.Control as="textarea" rows={3} />
+                <Form.Control
+                  as="textarea"
+                  rows={3}
+                  onChange={(event) => {
+                    setDescription((prev) => ({
+                      ...prev,
+                      description: event.target.value,
+                    }));
+                  }}
+                />
               </Form.Group>
             </Form>
           </Modal.Body>
           <Modal.Footer>
-            <Button variant="primary" onClick={handleClose}>
+            <Button
+              variant="primary"
+              // onClick={handleClose}
+              onClick={(event) => {
+                event.preventDefault();
+                handleClose();
+              }}
+            >
               Submit
             </Button>
             <Button variant="secondary" onClick={handleClose}>
