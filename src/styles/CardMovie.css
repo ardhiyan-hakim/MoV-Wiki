@@ -1,32 +1,65 @@
-.cardMovie{
-  height : auto;
+.movie-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.movie-header .modals-trigger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  background-color: #ee1515;
+  color: #f0f0f0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: none;
+  padding: 20px;
+  border-radius: 100%;
+}
+
+.modals-trigger p{
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  transform: scale(125%) translateY(-3px);
+  margin: 0;
+}
+
+.cardMovie {
+  height: auto;
   width: 100%;
 }
-.movieImage{
- height: auto;
- margin: 5px;
- padding: 1px;
- border: none;
- background: none;
+
+.movieImage {
+  height: auto;
+  margin: 5px;
+  padding: 1px;
+  border: none;
+  background: none;
 }
-.images{
+
+.images {
   height: 350px;
-  border-radius: 12px 12px 0 0 ;
+  border-radius: 12px 12px 0 0;
   cursor: pointer;
 }
-.movieWrapper{
+
+.movieWrapper {
   padding: 0;
 }
-.icon{
+
+.icon {
   margin-bottom: 3px;
 }
 
-.card .card-content{
+.card .card-content {
   border-radius: 0 0 12px 12px;
   background-color: #fff;
   color: #ee1515;
 }
-.btn{
+
+.btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,11 +67,13 @@
   width: 50%;
   border-radius: 7px;
 }
+
 .movieImage .card {
   border-radius: 12px;
 }
+
 .movieImage img {
   border: none;
   border-radius: 6px 6px 0 0;
-  width: 100%
+  width: 100%;
 }
