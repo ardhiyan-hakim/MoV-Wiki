@@ -1,0 +1,85 @@
+.landing-page {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #EE1515;
+  padding: 5%;
+  gap: 30px;
+}
+
+.landing-page .illustration {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 30px;
+}
+
+.illustration .illustration-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.illustration-image .image-lp {
+  width: 400px;
+  height: 400px;
+  background: url('../../assets/lp/illustration2.svg');
+  background-size: cover;
+  background-position: center;
+}
+
+.landing-page .form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40%;
+  padding: 2% 5% 2% 2%;
+  border-radius: 0 30px 30px 0;
+}
+
+.form form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #FFF;
+  height: auto;
+  border-radius: 20px;
+  padding: 10% 7.5%;
+}
+
+.form form label {
+  font-weight: 600;
+}
+
+.form form .text-muted.show {
+  color: #EE1515!important;
+}
+
+.form form .text-muted.hide {
+  display: none;
+}
+
+.form .button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.button-container button {
+  width: 100%;
+  padding: 8px;
+  background-color: #EE1515;
+  color: #FFF;
+  border: none;
+  border-radius: 6px;
+  transition: 0.3s ease;
+
+}
+
+.button-container button:hover {
+  transform: scale(95%);
+}
+.button-container button:active {
+  transform: scale(90%);
+}
