@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 import { BsSearch } from "react-icons/bs";
 
-function NavMov() {
+function NavbarComponent() {
   const navigate = useNavigate();
 
   return (
@@ -35,4 +35,4 @@ function NavMov() {
   );
 }
 
-export default NavMov;
+export default NavbarComponent;
