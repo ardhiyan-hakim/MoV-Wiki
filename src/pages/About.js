@@ -2,11 +2,11 @@ import Cardbio from "../components/CardBio";
 import NavbarComponent from "../layouts/NavbarComponent";
 import FooterComponent from "../layouts/FooterComponent";
 
-function About() {
+function About({ about }) {
   return (
     <>
       <NavbarComponent />
-      <Cardbio />
+      <Cardbio about={about} />
       <FooterComponent />
     </>
   );

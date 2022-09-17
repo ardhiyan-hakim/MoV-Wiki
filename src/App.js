@@ -12,14 +12,20 @@ import Movie5 from "./pages/Movie_5";
 import Movie6 from "./pages/Movie_6";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+import { useState } from "react";
+import data from "./utils/data";
+
 function App() {
+  const [movies, setMovies] = useState(data.movies);
+  const [about] = useState(data.about);
+
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/landingpage" element={<LandingPage />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/movie" element={<Movie />} />
+        <Route path="/login" element={<LandingPage />} />
+        <Route path="/about" element={<About about={about} />} />
+        <Route path="/movie" element={<Movie movies={movies} setMovies={setMovies} />} />
         <Route path="/movie/1" element={<Movie1 />} />
         <Route path="/movie/2" element={<Movie2 />} />
         <Route path="/movie/3" element={<Movie3 />} />
