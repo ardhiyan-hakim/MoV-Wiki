@@ -8,36 +8,42 @@ import Profile from "../assets/profile/profilepict.jpg";
 
 const movies = [
   {
+    id: 1,
     title: "Miracle in Cell 07",
     Rating: 4.9,
     image: Miracle,
     path: 1,
   },
   {
+    id: 2,
     title: "Mumun",
     Rating: 4.8,
     image: Mumun,
     path: 2,
   },
   {
+    id: 3,
     title: "Onepiece",
     Rating: 4.6,
     image: Onepiece,
     path: 3,
   },
   {
+    id: 4,
     title: "Pinocchio",
     Rating: 4.5,
     image: Pinocchio,
     path: 4,
   },
   {
+    id: 5,
     title: "Topgun",
     Rating: 4.4,
     image: Topgun,
     path: 5,
   },
   {
+    id: 6,
     title: "Uncharted",
     Rating: 4.7,
     image: Uncharted,
