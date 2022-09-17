@@ -25,13 +25,16 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LandingPage />} />
         <Route path="/about" element={<About about={about} />} />
-        <Route path="/movie" element={<Movie movies={movies} setMovies={setMovies} />} />
-        <Route path="/movie/1" element={<Movie1 />} />
-        <Route path="/movie/2" element={<Movie2 />} />
-        <Route path="/movie/3" element={<Movie3 />} />
-        <Route path="/movie/4" element={<Movie4 />} />
-        <Route path="/movie/5" element={<Movie5 />} />
-        <Route path="/movie/6" element={<Movie6 />} />
+        <Route
+          path="/movie"
+          element={<Movie movies={movies} setMovies={setMovies} />}
+        />
+        <Route path="/movie/1" element={<Movie1 movies={movies} />} />
+        <Route path="/movie/2" element={<Movie2 movies={movies} />} />
+        <Route path="/movie/3" element={<Movie3 movies={movies} />} />
+        <Route path="/movie/4" element={<Movie4 movies={movies} />} />
+        <Route path="/movie/5" element={<Movie5 movies={movies} />} />
+        <Route path="/movie/6" element={<Movie6 movies={movies} />} />
       </Routes>
     </BrowserRouter>
   );
