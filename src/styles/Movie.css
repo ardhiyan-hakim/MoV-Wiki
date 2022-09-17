@@ -41,6 +41,7 @@ h1 {
 .images {
   width: 100%;
   border-radius: 5px;
+  height: auto;
 }
 .content-body > * {
   display: flex;
@@ -70,4 +71,25 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@media screen and (max-width: 1024px) {
+  .content-body {
+    width: 100%;
+  }
+
+  .content-header-image{
+    width: 100%;
+  }
+
+  .wrapper{
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+  }
+
+  .images{
+    transform: scale(110%);
+  }
 }
