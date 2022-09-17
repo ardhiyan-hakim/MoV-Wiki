@@ -11,7 +11,6 @@ import { useNavigate } from "react-router-dom";
 
 function CardMovie({ movies }) {
   const navigate = useNavigate();
-
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -22,7 +21,6 @@ function CardMovie({ movies }) {
   const [director, setDirector] = useState("");
   const [actor, setActor] = useState("");
   const [description, setDescription] = useState("");
-
   return (
     <>
       <div className="movie-header">
@@ -184,7 +182,7 @@ function CardMovie({ movies }) {
                         {item.title}
                       </Card.Title>
                       <Card.Text className="text-center">
-                        Rating : {item.Rating}{" "}
+                        Rating : {item.rating}
                         <AiFillStar color="yellow" className="icon" />
                       </Card.Text>
                       <Button
