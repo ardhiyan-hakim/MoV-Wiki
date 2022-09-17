@@ -3,16 +3,16 @@ import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import "../styles/layouts/NavbarStyled.css";
 import { useNavigate } from "react-router-dom";
 
 import { BsSearch } from "react-icons/bs";
+import "../styles/layouts/NavbarStyled.css";
 
 function NavbarComponent() {
   const navigate = useNavigate();
 
   return (
-    <Navbar expand="lg">
+    <Navbar expand="lg" className="sticky">
       <Container fluid>
         <Navbar.Brand className="navlogo" onClick={() => navigate("/")}>
           MoV-Wiki

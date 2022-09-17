@@ -1,6 +1,9 @@
 nav {
   background-color: #ee1515;
   color: #f0f0f0;
+}
+
+.navbar.sticky {
   position: sticky;
   left: 0;
   top: 0;
