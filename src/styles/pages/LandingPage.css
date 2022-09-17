@@ -8,6 +8,11 @@
   gap: 30px;
 }
 
+.landing-page h2 {
+  color: #EE1515;
+  margin-bottom: 30px;
+}
+
 .landing-page .illustration {
   display: flex;
   flex-direction: column;
@@ -46,6 +51,8 @@
   height: auto;
   border-radius: 20px;
   padding: 10% 7.5%;
+  border: 3px solid #0A0A0A;
+  box-shadow: 16px 16px 0 #0A0A0A;
 }
 
 .form form label {

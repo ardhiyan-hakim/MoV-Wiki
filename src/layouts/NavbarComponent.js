@@ -15,7 +15,7 @@ function NavbarComponent() {
     <Navbar expand="lg">
       <Container fluid>
         <Navbar.Brand className="navlogo" onClick={() => navigate("/")}>
-          MoV
+          MoV-Wiki
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">

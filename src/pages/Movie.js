@@ -3,12 +3,12 @@ import "../styles/Movie.css";
 import NavbarComponent from "../layouts/NavbarComponent";
 import FooterComponent from "../layouts/FooterComponent";
 
-function Movie() {
+function Movie({ movies }) {  
   return (
     <>
       <NavbarComponent />
       <div className="cardMovie">
-        <CardMovie />
+        <CardMovie movies={movies} />
       </div>
       <FooterComponent />
     </>

@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 
 function CardComponent({ image, name, link }) {
   return (
-    <Card>
+    <Card className="card-bio">
       <Card.Img src={image} className="profileimg" />
       <Card.Title>Frontend Developer</Card.Title>
       <div className="name">{name}</div>

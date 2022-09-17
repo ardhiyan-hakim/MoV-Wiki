@@ -1,75 +1,75 @@
 .card-container {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    grid-template-columns: 30% 30% 30%;
-    background-color: #F0F0F0;
-    padding: 5%;
-    gap: 20px;
-  }
-  
-  .card {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #FFFFFF;
-    padding: 20px;
-    height: 100%;
-    border-radius: 12px;
-  }
-  
-  .profileimg {
-    width: 50%;
-    border-radius: 50%;
-    margin-bottom: 20px;
-  }
-  
-  .name {
-    font-size: 20px;
-    color: #EE1515;
-    padding-bottom: 20px;
-  }
-  
-  .card img {
-    border: 4px solid #EE1515;
-    border-radius: 100%;
-    width: 70%;
-  }
-  
-  .btn {
-    display: flex;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .link-button.btn-primary {
-    --bs-btn-bg: #EE1515;
-    --bs-btn-border-color: #EE1515;
-    --bs-btn-hover-bg: #FFFFFF;
-    --bs-btn-hover-border-color: #EE1515;
-    --bs-btn-active-bg: #FFFFFF;
-    --bs-btn-active-border-color: #EE1515;
-    padding: 0;
-    transition: 0.3s ease;
-  }
-  
-  .btn-primary:active {
-    transform: scale(90%);
-  }
-  
-  .link-button a {
-    display: block;
-    width: 100%;
-    height: 100%;
-    color: #FFFFFF;
-    padding: 6px 12px;
-    text-decoration: none;
-  }
-  
-  .btn-primary:hover a {
-    color: #EE1515;
-  }
-  .bg-cpy {
-    width: 100%;
-  }
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 30% 30% 30%;
+  background-color: #f0f0f0;
+  padding: 5%;
+  gap: 20px;
+}
+
+.card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 20px;
+  height: 100%;
+  border-radius: 12px;
+}
+
+.profileimg {
+  width: 50%;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.name {
+  font-size: 20px;
+  color: #ee1515;
+  padding-bottom: 20px;
+}
+
+.card.card-bio img {
+  border: 4px solid #ee1515;
+  border-radius: 100%;
+  width: 70%;
+}
+
+.btn {
+  display: flex;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.link-button.btn-primary {
+  --bs-btn-bg: #ee1515;
+  --bs-btn-border-color: #ee1515;
+  --bs-btn-hover-bg: #ffffff;
+  --bs-btn-hover-border-color: #ee1515;
+  --bs-btn-active-bg: #ffffff;
+  --bs-btn-active-border-color: #ee1515;
+  padding: 0;
+  transition: 0.3s ease;
+}
+
+.btn-primary:active {
+  transform: scale(90%);
+}
+
+.link-button a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  padding: 6px 12px;
+  text-decoration: none;
+}
+
+.btn-primary:hover a {
+  color: #ee1515;
+}
+.bg-cpy {
+  width: 100%;
+}
