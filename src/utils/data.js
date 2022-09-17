@@ -20,27 +20,27 @@ const movies = [
     path: 2,
   },
   {
-    title: "Uncharted",
-    Rating: 4.7,
-    image: Uncharted,
-    path: 3,
-  },
-  {
     title: "Onepiece",
     Rating: 4.6,
     image: Onepiece,
-    path: 4,
+    path: 3,
   },
   {
     title: "Pinocchio",
     Rating: 4.5,
     image: Pinocchio,
-    path: 5,
+    path: 4,
   },
   {
     title: "Topgun",
     Rating: 4.4,
     image: Topgun,
+    path: 5,
+  },
+  {
+    title: "Uncharted",
+    Rating: 4.7,
+    image: Uncharted,
     path: 6,
   },
 ];
