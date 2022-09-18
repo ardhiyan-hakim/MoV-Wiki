@@ -3,7 +3,19 @@ import "../styles/Movie.css";
 import NavbarComponent from "../layouts/NavbarComponent";
 import FooterComponent from "../layouts/FooterComponent";
 import DetailMovie from "../components/DetailMovie";
-function Movie_5({ movies }) {
+
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
+function Movie_5({ movies, isLogin }) {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isLogin === false) {
+      navigate("/login");
+    }
+  });
+
   return (
     <>
       <NavbarComponent />
