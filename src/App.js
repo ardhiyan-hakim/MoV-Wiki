@@ -18,12 +18,23 @@ import data from "./utils/data";
 function App() {
   const [movies, setMovies] = useState(data.movies);
   const [about] = useState(data.about);
+  const [user] = useState(data.user);
+  const [isLogin, setIsLogin] = useState(false);
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<LandingPage />} />
+        <Route path="/" element={<HomePage isLogin={isLogin} />} />
+        <Route
+          path="/login"
+          element={
+            <LandingPage
+              users={user}
+              isLogin={isLogin}
+              setIsLogin={setIsLogin}
+            />
+          }
+        />
         <Route path="/about" element={<About about={about} />} />
         <Route
           path="/movie"

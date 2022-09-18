@@ -129,9 +129,28 @@ const about = [
   },
 ];
 
+const user = [
+  {
+    id: 1,
+    username: "ardhiyanah23@gmail.com",
+    password: "timUwU!!",
+  },
+  {
+    id: 2,
+    username: "firmanwijaya@gmail.com",
+    password: "punyaAyang!!",
+  },
+  {
+    id: 3,
+    username: "christofernazara@gmail.com",
+    password: "Horas!!",
+  },
+]
+
 const data = {
   movies,
   about,
+  user
 };
 
 export default data;

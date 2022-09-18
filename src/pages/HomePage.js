@@ -3,7 +3,18 @@ import SummaryMovie from "../components/SummaryMovie";
 import NavbarComponent from "../layouts/NavbarComponent";
 import FooterComponent from "../layouts/FooterComponent";
 
-function HomePage() {
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
+function HomePage({ isLogin }) {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isLogin === false) {
+      navigate("/login");
+    }
+  });
+
   return (
     <>
       <NavbarComponent />

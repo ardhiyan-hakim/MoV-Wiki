@@ -170,8 +170,6 @@ function CardMovie({ movies }) {
 
         <Row className="card-movie">
           {movies.map((item, index) => {
-          console.log(item.title);
-          console.log(item.path);
             return (
               <Col md={3} className="movieWrapper" key={index}>
                 <Card className="movieImage">
