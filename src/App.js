@@ -19,7 +19,9 @@ function App() {
   const [movies, setMovies] = useState(data.movies);
   const [about] = useState(data.about);
   const [user] = useState(data.user);
-  const [isLogin, setIsLogin] = useState(false);
+
+  const isLoggedIn = JSON.parse(localStorage.getItem('isLogin'));
+  const [isLogin, setIsLogin] = useState(isLoggedIn ? true : false);
 
   return (
     <BrowserRouter>
@@ -35,17 +37,20 @@ function App() {
             />
           }
         />
-        <Route path="/about" element={<About about={about} />} />
+        <Route
+          path="/about"
+          element={<About about={about} isLogin={isLogin} />}
+        />
         <Route
           path="/movie"
           element={<Movie movies={movies} setMovies={setMovies} />}
         />
-        <Route path="/movie/1" element={<Movie1 movies={movies} />} />
-        <Route path="/movie/2" element={<Movie2 movies={movies} />} />
-        <Route path="/movie/3" element={<Movie3 movies={movies} />} />
-        <Route path="/movie/4" element={<Movie4 movies={movies} />} />
-        <Route path="/movie/5" element={<Movie5 movies={movies} />} />
-        <Route path="/movie/6" element={<Movie6 movies={movies} />} />
+        <Route path="/movie/1" element={<Movie1 movies={movies} isLogin={isLogin} />} />
+        <Route path="/movie/2" element={<Movie2 movies={movies} isLogin={isLogin} />} />
+        <Route path="/movie/3" element={<Movie3 movies={movies} isLogin={isLogin} />} />
+        <Route path="/movie/4" element={<Movie4 movies={movies} isLogin={isLogin} />} />
+        <Route path="/movie/5" element={<Movie5 movies={movies} isLogin={isLogin} />} />
+        <Route path="/movie/6" element={<Movie6 movies={movies} isLogin={isLogin} />} />
       </Routes>
     </BrowserRouter>
   );

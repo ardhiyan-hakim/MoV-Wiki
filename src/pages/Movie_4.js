@@ -3,8 +3,18 @@ import "../styles/Movie.css";
 import NavbarComponent from "../layouts/NavbarComponent";
 import FooterComponent from "../layouts/FooterComponent";
 import DetailMovie from "../components/DetailMovie";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
-function Movie_4({movies}) {
+function Movie_4({ movies, isLogin }) {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isLogin === false) {
+      navigate("/login");
+    }
+  });
+
   return (
     <>
       <NavbarComponent />
@@ -18,7 +28,7 @@ function Movie_4({movies}) {
         director={movies[3].director}
         sinopsis={movies[3].sinopsis}
       />
-     
+
       <FooterComponent />
     </>
   );
