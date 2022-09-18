@@ -7,6 +7,7 @@ const Cardbio = ({ about }) => {
       {about.map((aboutItem) => {
         return (
           <CardComponent
+            key={aboutItem.id}
             image={aboutItem.image}
             name={aboutItem.name}
             link={aboutItem.link}

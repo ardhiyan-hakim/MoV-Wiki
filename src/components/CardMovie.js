@@ -5,11 +5,35 @@ import Modal from "react-bootstrap/Modal";
 import { Row, Col, Card, Image } from "react-bootstrap";
 import { AiFillStar } from "react-icons/ai";
 
+import data from "../utils/data";
+
 import "../styles/CardMovie.css";
 
 import { useNavigate } from "react-router-dom";
 
-function CardMovie({ movies }) {
+function createObject(
+  title,
+  rating,
+  image,
+  genre,
+  director,
+  actor,
+  description
+) {
+  return {
+    id: +new Date(),
+    title: title.title,
+    rating: rating.rating,
+    image: image.image,
+    path: +new Date(),
+    genre: genre.genre,
+    director: director.director,
+    actor: actor.actor,
+    sinopsis: description.description,
+  };
+}
+
+function CardMovie({ movies, setMovies }) {
   const navigate = useNavigate();
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -21,6 +45,7 @@ function CardMovie({ movies }) {
   const [director, setDirector] = useState("");
   const [actor, setActor] = useState("");
   const [description, setDescription] = useState("");
+
   return (
     <>
       <div className="movie-header">
@@ -33,10 +58,16 @@ function CardMovie({ movies }) {
       <div className="cardContainer">
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
+            <Modal.Title>Add Movie</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <Form>
+            <Form
+              onSubmit={(event) => {
+                event.preventDefault();
+                console.log("Submit berhasil");
+                alert("Hi");
+              }}
+            >
               <Form.Group
                 className="mb-3"
                 controlId="exampleForm.ControlInput1"
@@ -152,19 +183,32 @@ function CardMovie({ movies }) {
             </Form>
           </Modal.Body>
           <Modal.Footer>
-            <Button
-              variant="primary"
-              // onClick={handleClose}
-              onClick={(event) => {
-                event.preventDefault();
+            <button
+              type="submit"
+              onClick={() => {
                 handleClose();
+                const newObj = createObject(
+                  title,
+                  rating,
+                  image,
+                  genre,
+                  director,
+                  actor,
+                  description
+                );
+
+                data.movies.push(newObj);
               }}
             >
               Submit
-            </Button>
-            <Button variant="secondary" onClick={handleClose}>
-              Close
-            </Button>
+            </button>
+            <button
+              onClick={() => {
+                handleClose();
+              }}
+            >
+              Cancel
+            </button>
           </Modal.Footer>
         </Modal>
 
