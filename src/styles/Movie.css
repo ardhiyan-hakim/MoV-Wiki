@@ -78,8 +78,13 @@ img {
     width: 100%;
   }
 
+  .content-header {
+    height: auto;
+  }
+
   .content-header-image{
     width: 100%;
+    height: auto;
   }
 
   .wrapper{

@@ -3,7 +3,10 @@ import "../styles/Movie.css";
 import NavbarComponent from "../layouts/NavbarComponent";
 import FooterComponent from "../layouts/FooterComponent";
 
-function Movie({ movies }) {  
+function Movie({ movies }) {
+  const check = localStorage.getItem("isLogin");
+  console.log(check);
+  
   return (
     <>
       <NavbarComponent />
