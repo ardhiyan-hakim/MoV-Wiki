@@ -3,15 +3,25 @@ import "../styles/Movie.css";
 import NavbarComponent from "../layouts/NavbarComponent";
 import FooterComponent from "../layouts/FooterComponent";
 
-function Movie({ movies }) {
-  const check = localStorage.getItem("isLogin");
-  console.log(check);
-  
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
+function Movie({ movies, setMovies, isLogin }) {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isLogin === false) {
+      navigate("/login");
+    }
+
+    console.log(movies);
+  });
+
   return (
     <>
       <NavbarComponent />
       <div className="cardMovie">
-        <CardMovie movies={movies} />
+        <CardMovie movies={movies} setMovies={setMovies} />
       </div>
       <FooterComponent />
     </>

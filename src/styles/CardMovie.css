@@ -42,7 +42,6 @@
 .images {
   height: 350px;
   border-radius: 12px 12px 0 0;
-  cursor: pointer;
 }
 
 .movieWrapper {

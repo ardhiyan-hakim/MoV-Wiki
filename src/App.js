@@ -43,7 +43,7 @@ function App() {
         />
         <Route
           path="/movie"
-          element={<Movie movies={movies} setMovies={setMovies} />}
+          element={<Movie movies={movies} setMovies={setMovies} isLogin={isLogin} />}
         />
         <Route path="/movie/1" element={<Movie1 movies={movies} isLogin={isLogin} />} />
         <Route path="/movie/2" element={<Movie2 movies={movies} isLogin={isLogin} />} />
