@@ -73,6 +73,32 @@ img {
   align-items: center;
 }
 
+.modal-footer button {
+  padding: 8px 16px;
+  border: 2px solid #EE1515;
+  outline: none;
+  background-color: #ee1515;
+  color: #fff;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+
+.modal-footer button.cancel-button {
+  background-color: #fff;
+  color: #ee1515;
+
+}
+
+button.cancel-button:hover,
+button.submit-button:hover {
+  transform: scale(90%);
+}
+
+button.cancel-button:active,
+button.submit-button:active {
+  transform: scale(80%);
+}
+
 @media screen and (max-width: 1024px) {
   .content-body {
     width: 100%;
@@ -82,19 +108,19 @@ img {
     height: auto;
   }
 
-  .content-header-image{
+  .content-header-image {
     width: 100%;
     height: auto;
   }
 
-  .wrapper{
+  .wrapper {
     flex-direction: column;
     justify-content: center;
     display: flex;
     align-items: center;
   }
 
-  .images{
+  .images {
     transform: scale(110%);
   }
 }

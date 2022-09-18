@@ -185,6 +185,7 @@ function CardMovie({ movies, setMovies }) {
           <Modal.Footer>
             <button
               type="submit"
+              className="submit-button"
               onClick={() => {
                 handleClose();
                 const newObj = createObject(
@@ -203,6 +204,7 @@ function CardMovie({ movies, setMovies }) {
               Submit
             </button>
             <button
+              className="cancel-button"
               onClick={() => {
                 handleClose();
               }}
