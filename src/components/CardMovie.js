@@ -232,7 +232,7 @@ function CardMovie({ movies, setMovies }) {
                       <Button
                         variant="primary"
                         onClick={() => {
-                          navigate(`./${item.path}`);
+                          navigate(`./${item.id}`);
                         }}
                       >
                         Detail
