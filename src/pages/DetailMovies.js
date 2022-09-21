@@ -5,30 +5,37 @@ import FooterComponent from "../layouts/FooterComponent";
 import DetailMovie from "../components/DetailMovie";
 
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams} from "react-router-dom";
+
+function findMovie(movies,id){
+  return movies.filter((movie)=> movie.id === id)
+}
 
 function Movie_1({ movies, isLogin }) {
   const navigate = useNavigate();
-
   useEffect(() => {
     if (isLogin === false) {
       navigate("/login");
     }
   });
 
+  const params = useParams()
+  const {id} = params;
+  const [movie] = findMovie(movies,Number(id))
+  
   return (
     <>
       <NavbarComponent />
 
       <DetailMovie
-        key={movies[0].id}
-        title={movies[0].title}
-        image={movies[0].image}
-        rating={movies[0].rating}
-        genre={movies[0].genre}
-        actor={movies[0].actor}
-        director={movies[0].director}
-        sinopsis={movies[0].sinopsis}
+        key={movie.id}
+        title={movie.title}
+        image={movie.image}
+        rating={movie.rating}
+        genre={movie.genre}
+        actor={movie.actor}
+        director={movie.director}
+        sinopsis={movie.sinopsis}
       />
 
       <FooterComponent />
