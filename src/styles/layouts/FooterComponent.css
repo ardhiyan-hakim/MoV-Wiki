@@ -7,6 +7,46 @@ button.feedback {
 }
 
 p svg {
-    width: 20px;
-    height: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+.container.footer-container {
+  padding: 0 3%;
+  min-width: 100%;
+}
+
+.footer-container row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.col:first-child {
+  text-align: left;
+}
+.col {
+  text-align: center;
+}
+
+.contact .contact__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact__body p {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 120px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 992px) {
+  .container.footer-container {
+    min-width: auto;
+    padding: 0 5%;
+  }
 }
