@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import { BsSearch } from "react-icons/bs";
 import "../styles/layouts/NavbarStyled.css";
 
-function NavbarComponent() {
+function NavbarComponent({ setIsLogin }) {
   const navigate = useNavigate();
 
   return (
@@ -24,11 +24,25 @@ function NavbarComponent() {
             <Nav.Link onClick={() => navigate("/movie")}>Movie</Nav.Link>
           </Nav>
           <Form className="d-flex">
-            <Form.Control className="me-2" aria-label="Search" placeholder="Search"/>
+            <Form.Control
+              className="me-2"
+              aria-label="Search"
+              placeholder="Search"
+            />
             <Button>
               <BsSearch />
             </Button>
           </Form>
+          <button
+            className="logout-button"
+            onClick={() => {
+              console.log("Tombol Logout bekerja");
+              setIsLogin(() => false)
+
+            }}
+          >
+            Log Out
+          </button>
         </Navbar.Collapse>
       </Container>
     </Navbar>

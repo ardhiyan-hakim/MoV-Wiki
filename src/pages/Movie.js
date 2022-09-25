@@ -6,7 +6,7 @@ import FooterComponent from "../layouts/FooterComponent";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-function Movie({ movies, setMovies, isLogin }) {
+function Movie({ movies, setMovies, isLogin, setIsLogin }) {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -19,7 +19,7 @@ function Movie({ movies, setMovies, isLogin }) {
 
   return (
     <>
-      <NavbarComponent />
+      <NavbarComponent setIsLogin={setIsLogin} />
       <div className="cardMovie">
         <CardMovie movies={movies} setMovies={setMovies} />
       </div>

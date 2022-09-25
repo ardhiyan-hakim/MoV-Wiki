@@ -21,7 +21,11 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HomePage isLogin={isLogin} />} />
+        <Route
+          path="/"
+          element={<HomePage isLogin={isLogin} setIsLogin={setIsLogin} />}
+        />
+
         <Route
           path="/login"
           element={
@@ -34,17 +38,30 @@ function App() {
         />
         <Route
           path="/about"
-          element={<About about={about} isLogin={isLogin} />}
+          element={
+            <About about={about} isLogin={isLogin} setIsLogin={setIsLogin} />
+          }
         />
         <Route
           path="/movie"
           element={
-            <Movie movies={movies} setMovies={setMovies} isLogin={isLogin} />
+            <Movie
+              movies={movies}
+              setMovies={setMovies}
+              isLogin={isLogin}
+              setIsLogin={setIsLogin}
+            />
           }
         />
         <Route
           path="/movie/:id"
-          element={<DetailMovies movies={movies} isLogin={isLogin} />}
+          element={
+            <DetailMovies
+              movies={movies}
+              isLogin={isLogin}
+              setIsLogin={setIsLogin}
+            />
+          }
         />
       </Routes>
     </BrowserRouter>
