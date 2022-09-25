@@ -16,8 +16,6 @@ function LandingPage({ users, isLogin, setIsLogin }) {
     if (isLogin === true) {
       navigate("/");
     }
-
-    console.log(isLogin);
   });
 
   return (

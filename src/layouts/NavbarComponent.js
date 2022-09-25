@@ -36,7 +36,6 @@ function NavbarComponent({ setIsLogin }) {
           <button
             className="logout-button"
             onClick={() => {
-              console.log("Tombol Logout bekerja");
               setIsLogin(() => false)
 
             }}
