@@ -13,8 +13,6 @@ function Movie({ movies, setMovies, isLogin, setIsLogin }) {
     if (isLogin === false) {
       navigate("/login");
     }
-
-    console.log(movies);
   });
 
   return (

@@ -61,13 +61,7 @@ function CardMovie({ movies, setMovies }) {
             <Modal.Title>Add Movie</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <Form
-              onSubmit={(event) => {
-                event.preventDefault();
-                console.log("Submit berhasil");
-                alert("Hi");
-              }}
-            >
+            <Form>
               <Form.Group
                 className="mb-3"
                 controlId="exampleForm.ControlInput1"
