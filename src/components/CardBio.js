@@ -1,7 +1,10 @@
+import { useSelector } from "react-redux";
 import "../styles/layouts/CardBioStyled.css";
 import CardComponent from "./CardComponent";
 
-const Cardbio = ({ about }) => {
+const Cardbio = () => {
+  const { about } = useSelector((state) => state);
+
   return (
     <div className="card-container">
       {about.map((aboutItem) => {

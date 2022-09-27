@@ -5,7 +5,7 @@ import FooterComponent from "../layouts/FooterComponent";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-function About({ about, isLogin, setIsLogin }) {
+function About({ isLogin, setIsLogin }) {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -17,7 +17,7 @@ function About({ about, isLogin, setIsLogin }) {
   return (
     <>
       <NavbarComponent setIsLogin={setIsLogin} />
-      <Cardbio about={about} />
+      <Cardbio />
       <FooterComponent />
     </>
   );

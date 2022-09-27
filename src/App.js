@@ -8,63 +8,71 @@ import DetailMovies from "./pages/DetailMovies";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import { useState } from "react";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
 import data from "./utils/data";
+import reducer from "./bootstrap/reducer";
+import Test from "./pages/Test";
 
 function App() {
-  const [movies, setMovies] = useState(data.movies);
-  const [about] = useState(data.about);
   const [user] = useState(data.user);
+  const [movies] = useState(data.movies);
 
   const isLoggedIn = JSON.parse(localStorage.getItem("isLogin"));
   const [isLogin, setIsLogin] = useState(isLoggedIn ? true : false);
+  const store = createStore(reducer);
 
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route
-          path="/"
-          element={<HomePage isLogin={isLogin} setIsLogin={setIsLogin} />}
-        />
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={<HomePage isLogin={isLogin} setIsLogin={setIsLogin} />}
+          />
 
-        <Route
-          path="/login"
-          element={
-            <LandingPage
-              users={user}
-              isLogin={isLogin}
-              setIsLogin={setIsLogin}
-            />
-          }
-        />
-        <Route
-          path="/about"
-          element={
-            <About about={about} isLogin={isLogin} setIsLogin={setIsLogin} />
-          }
-        />
-        <Route
-          path="/movie"
-          element={
-            <Movie
-              movies={movies}
-              setMovies={setMovies}
-              isLogin={isLogin}
-              setIsLogin={setIsLogin}
-            />
-          }
-        />
-        <Route
-          path="/movie/:id"
-          element={
-            <DetailMovies
-              movies={movies}
-              isLogin={isLogin}
-              setIsLogin={setIsLogin}
-            />
-          }
-        />
-      </Routes>
-    </BrowserRouter>
+          <Route
+            path="/login"
+            element={
+              <LandingPage
+                users={user}
+                isLogin={isLogin}
+                setIsLogin={setIsLogin}
+              />
+            }
+          />
+
+          <Route
+            path="/about"
+            element={<About isLogin={isLogin} setIsLogin={setIsLogin} />}
+          />
+
+          <Route
+            path="/movie"
+            element={
+              <Movie
+                movies={movies}
+                isLogin={isLogin}
+                setIsLogin={setIsLogin}
+              />
+            }
+          />
+
+          <Route
+            path="/movie/:id"
+            element={
+              <DetailMovies
+                movies={movies}
+                isLogin={isLogin}
+                setIsLogin={setIsLogin}
+              />
+            }
+          />
+
+          <Route path="/test" element={<Test />} />
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   );
 }
 

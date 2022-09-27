@@ -36,20 +36,20 @@ function CardMovie({ movies, setMovies }) {
             return (
               <Col md={3} className="movieWrapper" key={index}>
                 <Card className="movieImage">
-                  <Image src={item.image} alt={item.title} className="images" />
+                  <Image src={item.image} alt={item.name} className="images" />
                   <div className="card-content">
                     <div className="p-2 m-1">
                       <Card.Title className="text-center">
-                        {item.title}
+                        {item.name}
                       </Card.Title>
                       <Card.Text className="text-center">
-                        Rating : {item.rating}
+                        Rating : {item.description1}
                         <AiFillStar color="yellow" className="icon" />
                       </Card.Text>
                       <Button
                         variant="primary"
                         onClick={() => {
-                          navigate(`./${item.id}`);
+                          navigate(`./${item.description2}`);
                         }}
                       >
                         Detail
