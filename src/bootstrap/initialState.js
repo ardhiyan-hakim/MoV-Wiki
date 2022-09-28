@@ -1,8 +1,7 @@
 import Profile from "../assets/profile/profilepict.jpg";
 
 const initialState = {
-  name: "mukti",
-  age: 24,
+  username: "mukti",
   about: [
     {
       id: 1,
