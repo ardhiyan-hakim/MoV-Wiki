@@ -11,7 +11,7 @@ function findMovie(movies,id){
   return movies.filter((movie)=> movie.id === id)
 }
 
-function Movie_1({ movies, isLogin }) {
+function Movie_1({ movies, isLogin ,setIsLogin}) {
   const navigate = useNavigate();
   useEffect(() => {
     if (isLogin === false) {
@@ -25,7 +25,7 @@ function Movie_1({ movies, isLogin }) {
   
   return (
     <>
-      <NavbarComponent />
+      <NavbarComponent setIsLogin={setIsLogin} />
 
       <DetailMovie
         key={movie.id}
