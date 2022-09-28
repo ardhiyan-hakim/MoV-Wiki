@@ -4,12 +4,16 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setAccessToken } from "../bootstrap/action";
+import createInstance from "../bootstrap/api";
 
-function LandingPage({ users, isLogin, setIsLogin, api }) {
+function LandingPage({ users, isLogin, setIsLogin }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPass] = useState("");
   const { access_token } = useSelector((state) => state);
+  
+  const api = createInstance(5000, access_token);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 

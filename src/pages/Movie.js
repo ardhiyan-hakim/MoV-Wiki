@@ -5,9 +5,11 @@ import FooterComponent from "../layouts/FooterComponent";
 
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import createInstance from "../bootstrap/api";
 
 function Movie({ movies, setMovies, isLogin, setIsLogin }) {
   const navigate = useNavigate();
+  const api = createInstance(15000);
 
   useEffect(() => {
     if (isLogin === false) {
@@ -21,6 +23,16 @@ function Movie({ movies, setMovies, isLogin, setIsLogin }) {
       <div className="cardMovie">
         <CardMovie movies={movies} setMovies={setMovies} />
       </div>
+      <button
+        onClick={() => {
+          api
+            .get("/content/data/mukti")
+            .then((res) => console.log(res.data))
+            .catch((err) => console.log(err));
+        }}
+      >
+        INI TOMBOL
+      </button>
       <FooterComponent />
     </>
   );
