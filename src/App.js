@@ -1,4 +1,8 @@
+import axios from "axios";
+import { useState } from "react";
+import { useSelector } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 import "./App.css";
 import About from "./pages/About";
 import HomePage from "./pages/HomePage";
@@ -7,16 +11,23 @@ import Movie from "./pages/Movie";
 import DetailMovies from "./pages/DetailMovies";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import { useState } from "react";
 import data from "./utils/data";
 
 function App() {
-  const [movies, setMovies] = useState(data.movies);
-  const [about] = useState(data.about);
   const [user] = useState(data.user);
+  const [movies] = useState(data.movies);
+  const { access_token } = useSelector((state) => state);
 
   const isLoggedIn = JSON.parse(localStorage.getItem("isLogin"));
   const [isLogin, setIsLogin] = useState(isLoggedIn ? true : false);
+
+  const api = axios.create({
+    baseURL: "https://kawahedukasibackend.herokuapp.com",
+    timeout: 5000,
+    headers: {
+      access_token,
+    },
+  });
 
   return (
     <BrowserRouter>
@@ -33,26 +44,23 @@ function App() {
               users={user}
               isLogin={isLogin}
               setIsLogin={setIsLogin}
+              api={api}
             />
           }
         />
+
         <Route
           path="/about"
-          element={
-            <About about={about} isLogin={isLogin} setIsLogin={setIsLogin} />
-          }
+          element={<About isLogin={isLogin} setIsLogin={setIsLogin} />}
         />
+
         <Route
           path="/movie"
           element={
-            <Movie
-              movies={movies}
-              setMovies={setMovies}
-              isLogin={isLogin}
-              setIsLogin={setIsLogin}
-            />
+            <Movie movies={movies} isLogin={isLogin} setIsLogin={setIsLogin} />
           }
         />
+
         <Route
           path="/movie/:id"
           element={
