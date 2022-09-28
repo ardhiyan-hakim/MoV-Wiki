@@ -31,11 +31,11 @@ function DetailMovie({
             <Card.Title>Genre :</Card.Title> <p>{genre}</p>
           </div>
           <div className="content-body-actor">
-            <Card.Title>Actor : </Card.Title>
+            <Card.Title>Director : </Card.Title>
             <p>{actor}</p>
           </div>
           <div className="content-body-director">
-            <Card.Title>Director :</Card.Title> <p>{director}</p>
+            <Card.Title>Actor :</Card.Title> <p>{director}</p>
           </div>
           <div className="content-body-sinopsis">
             <Card.Title>Sinopsis :</Card.Title>

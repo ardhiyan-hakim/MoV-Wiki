@@ -7,9 +7,11 @@ import "../styles/CardMovie.css";
 
 import { useNavigate } from "react-router-dom";
 import ModalsComponent from "./Modals";
+import { useSelector } from "react-redux";
 
-function CardMovie({ movies, setMovies }) {
+function CardMovie() {
   const navigate = useNavigate();
+  const { movies } = useSelector((state) => state);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -27,7 +29,6 @@ function CardMovie({ movies, setMovies }) {
         <ModalsComponent
           show={show}
           handleClose={handleClose}
-          setMovies={setMovies}
           method={"post"}
         />
 
@@ -49,7 +50,7 @@ function CardMovie({ movies, setMovies }) {
                       <Button
                         variant="primary"
                         onClick={() => {
-                          navigate(`./${item.description2}`);
+                          navigate(`./${item.id}`);
                         }}
                       >
                         Detail

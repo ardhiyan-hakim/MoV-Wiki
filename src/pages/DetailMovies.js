@@ -6,13 +6,16 @@ import DetailMovie from "../components/DetailMovie";
 
 import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function findMovie(movies, id) {
   return movies.filter((movie) => movie.id === id);
 }
 
-function Movie_1({ movies, isLogin, setIsLogin }) {
+function Movie_1({ isLogin, setIsLogin }) {
   const navigate = useNavigate();
+  const { movies } = useSelector((state) => state);
+
   useEffect(() => {
     if (isLogin === false) {
       navigate("/login");
@@ -32,10 +35,10 @@ function Movie_1({ movies, isLogin, setIsLogin }) {
         title={movie.name}
         image={movie.image}
         rating={movie.description1}
-        genre={movie.description3}
-        actor={movie.description4}
-        director={movie.description5}
-        sinopsis={movie.description6}
+        genre={movie.description2}
+        actor={movie.description3}
+        director={movie.description4}
+        sinopsis={movie.description5}
       />
 
       <FooterComponent />
