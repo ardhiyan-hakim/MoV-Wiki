@@ -19,4 +19,12 @@ function setMovies(payload) {
   };
 }
 
-export { setName, setUser, setMovies };
+function setAccessToken(payload) {
+  console.log(payload)
+  return {
+    type: "SET_AUTH",
+    payload: payload,
+  };
+}
+
+export { setName, setUser, setMovies, setAccessToken };

@@ -45,6 +45,8 @@ const initialState = {
       link: "https://www.linkedin.com/in/ardhiyan-hakim/",
     },
   ],
+  movies: [],
+  access_token: "",
 };
 
 export default initialState;

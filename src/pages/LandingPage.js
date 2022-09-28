@@ -2,21 +2,32 @@ import "../styles/pages/LandingPage.css";
 import Form from "react-bootstrap/Form";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { setAccessToken } from "../bootstrap/action";
 
-function LandingPage({ users, isLogin, setIsLogin }) {
+function LandingPage({ users, isLogin, setIsLogin, api }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPass] = useState("");
-
+  const { access_token } = useSelector((state) => state);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   useEffect(() => {
+    // Set isLogin to Local Storage
     localStorage.setItem("isLogin", isLogin);
 
     if (isLogin === true) {
       navigate("/");
     }
-  });
+  }, [isLogin, navigate]);
+
+  useEffect(() => {
+    // Set Access Token to Local Storage
+    if (access_token) {
+      localStorage.setItem("access_token", access_token);
+    }
+  }, [access_token]);
 
   return (
     <div className="landing-page">
@@ -31,26 +42,23 @@ function LandingPage({ users, isLogin, setIsLogin }) {
           onSubmit={(event) => {
             event.preventDefault();
 
-            const filtered = users.filter(
-              (user) => user.username === email.email
-            );
-
-            if (filtered.length === 0) {
-              alert("Tidak ada username tersebut pada database !");
-              return false;
-            }
-
             if (password.password !== confirmPassword.confirmPassword) {
               alert("Password dan Confirm Password tidak sesuai");
               return false;
             }
 
-            if (password.password !== filtered[0].password) {
-              alert("Password yang anda berikan salah");
-              return false;
-            }
-
-            setIsLogin(() => true);
+            api
+              .post("/login", {
+                username: email.email,
+                password: password.password,
+              })
+              .then((res) => {
+                dispatch(setAccessToken(res.data.access_token));
+              })
+              .catch((err) => console.log(err.response.data))
+              .then(() => {
+                setIsLogin(() => true);
+              });
           }}
         >
           <h2>Login</h2>
@@ -58,7 +66,7 @@ function LandingPage({ users, isLogin, setIsLogin }) {
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Username</Form.Label>
             <Form.Control
-              type="email"
+              type="text"
               placeholder="Your Email"
               onChange={(event) => {
                 setEmail((prev) => ({ ...prev, email: event.target.value }));

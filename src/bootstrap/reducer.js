@@ -22,6 +22,12 @@ function reducer(state = initialState, action) {
         movies: action.payload.movies,
       };
 
+    case "SET_AUTH":
+      return {
+        ...state,
+        access_token: action.payload,
+      };
+
     default:
       return state;
   }
