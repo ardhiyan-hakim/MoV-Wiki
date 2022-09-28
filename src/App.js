@@ -13,12 +13,9 @@ import { Provider } from "react-redux";
 import { createStore } from "redux";
 import reducer from "./bootstrap/reducer";
 
-import data from "./utils/data";
 const store = createStore(reducer);
 
 function App() {
-  const [movies] = useState(data.movies);
-
   const isLoggedIn = JSON.parse(localStorage.getItem("isLogin"));
   const [isLogin, setIsLogin] = useState(isLoggedIn ? true : false);
 
@@ -33,12 +30,7 @@ function App() {
 
           <Route
             path="/login"
-            element={
-              <LandingPage
-                isLogin={isLogin}
-                setIsLogin={setIsLogin}
-              />
-            }
+            element={<LandingPage isLogin={isLogin} setIsLogin={setIsLogin} />}
           />
 
           <Route
@@ -48,24 +40,12 @@ function App() {
 
           <Route
             path="/movie"
-            element={
-              <Movie
-                movies={movies}
-                isLogin={isLogin}
-                setIsLogin={setIsLogin}
-              />
-            }
+            element={<Movie isLogin={isLogin} setIsLogin={setIsLogin} />}
           />
 
           <Route
             path="/movie/:id"
-            element={
-              <DetailMovies
-                movies={movies}
-                isLogin={isLogin}
-                setIsLogin={setIsLogin}
-              />
-            }
+            element={<DetailMovies isLogin={isLogin} setIsLogin={setIsLogin} />}
           />
         </Routes>
       </BrowserRouter>

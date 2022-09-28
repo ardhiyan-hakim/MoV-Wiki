@@ -59,7 +59,7 @@ function LandingPage({ isLogin, setIsLogin }) {
                 dispatch(setUsername(email.email));
                 setIsLogin(() => true);
               })
-              .catch((err) => console.log(err.response.data))
+              .catch((err) => console.log(err.response.data));
           }}
         >
           <h2>Login</h2>

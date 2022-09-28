@@ -9,10 +9,9 @@ function reducer(state = initialState, action) {
       };
 
     case "SET_MOVIES":
-      console.log(action.payload);
       return {
         ...state,
-        movies: action.payload.movies,
+        movies: action.payload,
       };
 
     case "SET_AUTH":

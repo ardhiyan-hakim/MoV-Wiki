@@ -1,7 +1,9 @@
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import { useState } from "react";
-import data from "../utils/data";
+import { useSelector } from "react-redux";
+import createInstance from "../bootstrap/api";
+import { useNavigate } from "react-router-dom";
 
 function createObject(
   title,
@@ -13,7 +15,6 @@ function createObject(
   description
 ) {
   return {
-    // id: +new Date(),
     name: title.title,
     image: image.image,
     description1: rating.rating,
@@ -21,11 +22,10 @@ function createObject(
     description3: director.director,
     description4: actor.actor,
     description5: description.description,
-    description6: +new Date(),
   };
 }
 
-function ModalsComponent({ show, handleClose, setMovies, method }) {
+function ModalsComponent({ show, handleClose, method }) {
   const [title, setTitle] = useState("");
   const [rating, setRating] = useState(0);
   const [image, setImage] = useState("");
@@ -33,6 +33,10 @@ function ModalsComponent({ show, handleClose, setMovies, method }) {
   const [director, setDirector] = useState("");
   const [actor, setActor] = useState("");
   const [description, setDescription] = useState("");
+
+  const navigate = useNavigate();
+
+  const { access_token } = useSelector((state) => state);
 
   return (
     <Modal show={show} onHide={handleClose}>
@@ -153,11 +157,16 @@ function ModalsComponent({ show, handleClose, setMovies, method }) {
               description
             );
 
-            console.log(newObj);
-            data.movies.push(newObj);
-
-            if(method === "post") {
+            navigate('/movie');
+            if (method === "post") {
               // axios.post
+              const api = createInstance(5000, access_token);
+              api
+                .post("/content/create", newObj)
+                .then((res) => {
+                  console.log(res);
+                })
+                .catch((err) => console.log(err));
             } else if (method === "put") {
               // axios.put
             }

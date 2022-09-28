@@ -1,14 +1,18 @@
-import CardMovie from "../components/CardMovie";
 import "../styles/Movie.css";
+import CardMovie from "../components/CardMovie";
 import NavbarComponent from "../layouts/NavbarComponent";
 import FooterComponent from "../layouts/FooterComponent";
 
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import createInstance from "../bootstrap/api";
+import { useDispatch } from "react-redux";
 
-function Movie({ movies, setMovies, isLogin, setIsLogin }) {
+import createInstance from "../bootstrap/api";
+import { setMovies } from "../bootstrap/action";
+
+function Movie({ isLogin, setIsLogin }) {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const api = createInstance(15000);
 
   useEffect(() => {
@@ -17,22 +21,21 @@ function Movie({ movies, setMovies, isLogin, setIsLogin }) {
     }
   });
 
+  useEffect(() => {
+    api
+      .get("/content/data/timUwU22")
+      .then((res) => {
+        dispatch(setMovies(res.data));
+      })
+      .catch((err) => console.log(err));
+  });
+
   return (
     <>
       <NavbarComponent setIsLogin={setIsLogin} />
       <div className="cardMovie">
-        <CardMovie movies={movies} setMovies={setMovies} />
+        <CardMovie />
       </div>
-      <button
-        onClick={() => {
-          api
-            .get("/content/data/mukti")
-            .then((res) => console.log(res.data))
-            .catch((err) => console.log(err));
-        }}
-      >
-        INI TOMBOL
-      </button>
       <FooterComponent />
     </>
   );
