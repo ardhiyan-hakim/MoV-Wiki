@@ -5,13 +5,13 @@ import FooterComponent from "../layouts/FooterComponent";
 import DetailMovie from "../components/DetailMovie";
 
 import { useEffect } from "react";
-import { useNavigate, useParams} from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
-function findMovie(movies,id){
-  return movies.filter((movie)=> movie.id === id)
+function findMovie(movies, id) {
+  return movies.filter((movie) => movie.id === id);
 }
 
-function Movie_1({ movies, isLogin }) {
+function Movie_1({ movies, isLogin, setIsLogin }) {
   const navigate = useNavigate();
   useEffect(() => {
     if (isLogin === false) {
@@ -19,13 +19,13 @@ function Movie_1({ movies, isLogin }) {
     }
   });
 
-  const params = useParams()
-  const {id} = params;
-  const [movie] = findMovie(movies,Number(id))
-  
+  const params = useParams();
+  const { id } = params;
+  const [movie] = findMovie(movies, Number(id));
+
   return (
     <>
-      <NavbarComponent />
+      <NavbarComponent setIsLogin={setIsLogin} />
 
       <DetailMovie
         key={movie.id}
