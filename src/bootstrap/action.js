@@ -1,13 +1,6 @@
-function setName(payload) {
+function setUsername(payload) {
   return {
-    type: "SET_NAME",
-    payload: payload,
-  };
-}
-
-function setUser(payload) {
-  return {
-    type: "SET_USER",
+    type: "SET_USERNAME",
     payload: payload,
   };
 }
@@ -27,4 +20,4 @@ function setAccessToken(payload) {
   };
 }
 
-export { setName, setUser, setMovies, setAccessToken };
+export { setUsername, setMovies, setAccessToken };

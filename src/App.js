@@ -17,7 +17,6 @@ import data from "./utils/data";
 const store = createStore(reducer);
 
 function App() {
-  const [user] = useState(data.user);
   const [movies] = useState(data.movies);
 
   const isLoggedIn = JSON.parse(localStorage.getItem("isLogin"));
@@ -36,7 +35,6 @@ function App() {
             path="/login"
             element={
               <LandingPage
-                users={user}
                 isLogin={isLogin}
                 setIsLogin={setIsLogin}
               />

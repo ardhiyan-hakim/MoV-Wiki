@@ -3,15 +3,15 @@ import Form from "react-bootstrap/Form";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { setAccessToken } from "../bootstrap/action";
+import { setAccessToken, setUsername } from "../bootstrap/action";
 import createInstance from "../bootstrap/api";
 
-function LandingPage({ users, isLogin, setIsLogin }) {
+function LandingPage({ isLogin, setIsLogin }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPass] = useState("");
-  const { access_token } = useSelector((state) => state);
-  
+  const { access_token, username } = useSelector((state) => state);
+
   const api = createInstance(5000, access_token);
 
   const dispatch = useDispatch();
@@ -21,17 +21,15 @@ function LandingPage({ users, isLogin, setIsLogin }) {
     // Set isLogin to Local Storage
     localStorage.setItem("isLogin", isLogin);
 
-    if (isLogin === true) {
-      navigate("/");
-    }
-  }, [isLogin, navigate]);
-
-  useEffect(() => {
-    // Set Access Token to Local Storage
-    if (access_token) {
+    if (isLogin === true && access_token) {
       localStorage.setItem("access_token", access_token);
+      localStorage.setItem("username", username);
+      navigate("/");
+    } else {
+      localStorage.removeItem("access_token");
+      localStorage.removeItem("username");
     }
-  }, [access_token]);
+  }, [isLogin, access_token, navigate, username]);
 
   return (
     <div className="landing-page">
@@ -58,11 +56,10 @@ function LandingPage({ users, isLogin, setIsLogin }) {
               })
               .then((res) => {
                 dispatch(setAccessToken(res.data.access_token));
+                dispatch(setUsername(email.email));
+                setIsLogin(() => true);
               })
               .catch((err) => console.log(err.response.data))
-              .then(() => {
-                setIsLogin(() => true);
-              });
           }}
         >
           <h2>Login</h2>
@@ -93,7 +90,7 @@ function LandingPage({ users, isLogin, setIsLogin }) {
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formConfirmBasicPassword">
-            <Form.Label>Password</Form.Label>
+            <Form.Label>Confirm Password</Form.Label>
             <Form.Control
               type="password"
               placeholder="Password"
