@@ -12,6 +12,13 @@ function setMovies(payload) {
   };
 }
 
+function setMovie(payload) {
+  return {
+    type: "SET_MOVIE",
+    payload: payload,
+  }
+}
+
 function setAccessToken(payload) {
   console.log(payload)
   return {
@@ -20,4 +27,4 @@ function setAccessToken(payload) {
   };
 }
 
-export { setUsername, setMovies, setAccessToken };
+export { setUsername, setMovies, setMovie, setAccessToken };

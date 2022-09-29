@@ -27,6 +27,9 @@ h1 {
   height: 80%;
   aspect-ratio: 9/16;
 }
+.content-header-image img {
+  border-radius: 12px;
+}
 .content-header-title {
   height: 100px;
   max-height: 150px;
@@ -97,6 +100,34 @@ button.submit-button:hover {
 button.cancel-button:active,
 button.submit-button:active {
   transform: scale(80%);
+}
+
+.content-body .content-body-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-top: 40px;
+}
+
+.content-body-button button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 100%;
+  background-color: #EE1515;
+  color: #F0F0F0;
+  transition: 0.3s ease;
+}
+
+.content-body-button button:hover {
+  transform: scale(105%);
+}
+
+.content-body-button button:active {
+  transform: scale(90%);
 }
 
 @media screen and (max-width: 1024px) {
