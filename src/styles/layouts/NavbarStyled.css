@@ -10,11 +10,17 @@ nav {
   z-index: 999;
 }
 
-.nav-link {
+.nav-link.link_header{
   display: block;
   justify-content: center;
   color: #f0f0f0;
   height: 100%;
+  background-color: #EE1515;
+  padding: 8px;
+}
+
+.nav-link.link_header:hover{
+  color: #EE1515;
 }
 
 .nav-link:focus {
@@ -24,15 +30,14 @@ nav {
 span.navbar-brand {
   font-size: 2rem;
   font-weight: 600;
-  color: white;
+  color: #f0f0f0;
   border-radius: 8px;
   padding: 6px 18px;
   transition: 0.3s ease;
 }
 
 span.navbar-brand:hover {
-  color: #ee1515;
-  background-color: #f0f0f0;
+  color: #f0f0f0;
 }
 
 .navbar-brand,
@@ -55,6 +60,11 @@ span.navbar-brand:hover {
   border: none;
   color: #ee1515;
   background-color: #f0f0f0;
+}
+
+.navbar-collapse .navbar-nav-scroll {
+  display: flex;
+  gap: 15px;
 }
 
 .navbar-nav-scroll > * {

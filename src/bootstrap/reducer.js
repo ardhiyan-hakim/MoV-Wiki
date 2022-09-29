@@ -14,6 +14,13 @@ function reducer(state = initialState, action) {
         movies: action.payload,
       };
 
+    case "SET_MOVIE":
+      console.log(action.payload);
+      return {
+        ...state,
+        movies: action.payload
+      };
+
     case "SET_AUTH":
       return {
         ...state,

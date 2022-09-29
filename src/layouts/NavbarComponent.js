@@ -20,8 +20,8 @@ function NavbarComponent({ setIsLogin }) {
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav className="me-auto my-2 my-lg-0" navbarScroll>
-            <Nav.Link onClick={() => navigate("/about")}>About</Nav.Link>
-            <Nav.Link onClick={() => navigate("/movie")}>Movie</Nav.Link>
+            <Nav.Link className="link_header" onClick={() => navigate("/about")}>About</Nav.Link>
+            <Nav.Link className="link_header" onClick={() => navigate("/movie")}>Movie</Nav.Link>
           </Nav>
           <Form className="d-flex">
             <Form.Control

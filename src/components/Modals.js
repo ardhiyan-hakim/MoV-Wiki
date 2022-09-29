@@ -1,47 +1,31 @@
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import createInstance from "../bootstrap/api";
 import { useNavigate } from "react-router-dom";
+import { setMovie } from "../bootstrap/action";
 
-function createObject(
-  title,
-  rating,
-  image,
-  genre,
-  director,
-  actor,
-  description
-) {
-  return {
-    name: title.title,
-    image: image.image,
-    description1: rating.rating,
-    description2: genre.genre,
-    description3: director.director,
-    description4: actor.actor,
-    description5: description.description,
-  };
-}
-
-function ModalsComponent({ show, handleClose, method }) {
+function ModalsComponent({ show, handleClose, method, movie }) {
   const [title, setTitle] = useState("");
-  const [rating, setRating] = useState(0);
+  const [rating, setRating] = useState("");
   const [image, setImage] = useState("");
   const [genre, setGenre] = useState("");
   const [director, setDirector] = useState("");
   const [actor, setActor] = useState("");
   const [description, setDescription] = useState("");
 
+  const { movies, access_token } = useSelector((state) => state);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { access_token } = useSelector((state) => state);
 
   return (
     <Modal show={show} onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>Add Movie</Modal.Title>
+        <Modal.Title>
+          {method === "post" ? "Add Movie" : "Edit Movie"}
+        </Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form>
@@ -62,7 +46,6 @@ function ModalsComponent({ show, handleClose, method }) {
             <Form.Label>Rating</Form.Label>
             <Form.Control
               placeholder=""
-              autoFocus
               onChange={(event) => {
                 setRating((prev) => ({
                   ...prev,
@@ -75,7 +58,6 @@ function ModalsComponent({ show, handleClose, method }) {
             <Form.Label>Image</Form.Label>
             <Form.Control
               placeholder=""
-              autoFocus
               onChange={(event) => {
                 setImage((prev) => ({
                   ...prev,
@@ -88,7 +70,6 @@ function ModalsComponent({ show, handleClose, method }) {
             <Form.Label>Genre</Form.Label>
             <Form.Control
               placeholder=""
-              autoFocus
               onChange={(event) => {
                 setGenre((prev) => ({
                   ...prev,
@@ -104,7 +85,6 @@ function ModalsComponent({ show, handleClose, method }) {
             <Form.Label>Director</Form.Label>
             <Form.Control
               placeholder=""
-              autoFocus
               onChange={(event) => {
                 setDirector((prev) => ({
                   ...prev,
@@ -117,7 +97,6 @@ function ModalsComponent({ show, handleClose, method }) {
             <Form.Label>Actor</Form.Label>
             <Form.Control
               placeholder=""
-              autoFocus
               onChange={(event) => {
                 setActor((prev) => ({
                   ...prev,
@@ -146,29 +125,47 @@ function ModalsComponent({ show, handleClose, method }) {
           type="submit"
           className="submit-button"
           onClick={() => {
-            handleClose();
-            const newObj = createObject(
-              title,
-              rating,
-              image,
-              genre,
-              director,
-              actor,
-              description
-            );
+            const newObj = {
+              title: title.title,
+              rating: rating.rating,
+              image: image.image,
+              genre: genre.genre,
+              director: director.director,
+              actor: actor.actor,
+              description: description.description,
+            };
 
-            navigate('/movie');
+            for (let item in newObj) {
+              if (newObj[item] === undefined) {
+                alert(`Harap untuk mengisi ${item} terlebih dahulu!`);
+                return false;
+              }
+            }
+
+            const newData = createObject(newObj);
+
             if (method === "post") {
+              navigate("/movie");
               // axios.post
               const api = createInstance(5000, access_token);
               api
-                .post("/content/create", newObj)
+                .post("/content/create", newData)
                 .then((res) => {
                   console.log(res);
                 })
-                .catch((err) => console.log(err));
+                .catch((err) => console.log(err))
+                .then(() => handleClose());
             } else if (method === "put") {
+              const newMovies = editMovie(movies, movie.id, newData);
+              dispatch(setMovie(newMovies));
+
               // axios.put
+              const api = createInstance(5000, access_token);
+              api
+                .put(`/content/update/${movie.id}`, newData)
+                .then((res) => console.log(res))
+                .catch((err) => console.log(err))
+                .then(() => handleClose());
             }
           }}
         >
@@ -185,6 +182,34 @@ function ModalsComponent({ show, handleClose, method }) {
       </Modal.Footer>
     </Modal>
   );
+}
+
+function createObject({
+  title,
+  rating,
+  image,
+  genre,
+  director,
+  actor,
+  description,
+}) {
+  return {
+    name: title,
+    image: image,
+    description1: rating,
+    description2: genre,
+    description3: director,
+    description4: actor,
+    description5: description,
+  };
+}
+
+function editMovie(movies, id, newData) {
+  const currMovies = movies.filter((movie) => movie.id !== id);
+  newData.id = id;
+  currMovies.push(newData);
+
+  return currMovies;
 }
 
 export default ModalsComponent;

@@ -32,13 +32,7 @@ function Movie_1({ isLogin, setIsLogin }) {
 
       <DetailMovie
         key={movie.id}
-        title={movie.name}
-        image={movie.image}
-        rating={movie.description1}
-        genre={movie.description2}
-        actor={movie.description3}
-        director={movie.description4}
-        sinopsis={movie.description5}
+        movie={movie}
       />
 
       <FooterComponent />
